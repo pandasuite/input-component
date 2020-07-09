@@ -1,43 +1,51 @@
 import PandaBridge from 'pandasuite-bridge';
 
+import debounce from 'lodash/debounce';
+import set from 'lodash/set';
+
 let properties = null;
-let markers = null;
+
+function sendEvent(value) {
+  const data = {};
+
+  set(data, properties.key || 'value', value);
+  PandaBridge.send('sent', [data]);
+}
+
+function validate(erase = true) {
+  const text = document.getElementById('text').value;
+
+  sendEvent(text);
+  if (erase) {
+    document.getElementById('text').value = '';
+  }
+}
 
 function myInit() {
-  // const imageUrl = PandaBridge.resolvePath('my_image.png');
-  // PandaBridge.send('imageChanged');
+  const textEl = document.getElementById('text');
+
+  if (properties && properties.debounce) {
+    textEl.oninput = debounce(() => {
+      validate(false);
+    },
+    properties.debounceTime || 300);
+  }
+  textEl.style.fontSize = `${properties.textSize}px`;
+  textEl.style.color = properties.textColor;
 }
 
 PandaBridge.init(() => {
   PandaBridge.onLoad((pandaData) => {
     properties = pandaData.properties;
-    markers = pandaData.markers;
-
-    if (document.readyState === 'complete') {
-      myInit();
-    } else {
-      document.addEventListener('DOMContentLoaded', myInit, false);
-    }
+    myInit();
   });
 
   PandaBridge.onUpdate((pandaData) => {
     properties = pandaData.properties;
-    markers = pandaData.markers;
+    myInit();
   });
 
-  /* Markers */
-
-  PandaBridge.getSnapshotData(() => null);
-
-  PandaBridge.setSnapshotData((pandaData) => {
-    // pandaData.data.id
-  });
-
-  /* Actions */
-
-  PandaBridge.listen('changeColor', (args) => {
-  });
-
-  PandaBridge.synchronize('synchroImages', (percent) => {
+  PandaBridge.listen('validate', () => {
+    validate();
   });
 });

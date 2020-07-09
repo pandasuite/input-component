@@ -1,94 +1,65 @@
 {
   "version": "2.0.0",
   "main": "",
-
   "system": {
-    "localization": false,
-    "actions": [
-      {
-        "id": "toMarker",
-        "name": "Change Image",
-        "locale_name": {
-          "fr_FR": "Change Image"
-        },
-        "params": [
-          { "id": "useless", "name": "Useless", "locale_name": {"fr_FR": "Inutile"}, "type": "Boolean" }
-        ]
-      }
-    ],
-    "events": [
-      {
-        "id": "triggerMarker",
-        "name": "Image",
-        "locale_name": {
-          "fr_FR": "Image"
-        }
-      }
-    ],
-    "markers": [
-      {
-        "params": [
-          { "id": "src", "name": "Source", "locale_name": {"fr_FR": "Source"}, "type": "String" }
-        ]
-      }
-    ]
+    "markers": false
   },
-
-  "properties": [
-    {
-      "id": "searchTerm",
-      "name": "Search Term",
-      "locale_name": {
-        "fr_FR": "Terme de recherche"
-      },
-      "type": "String",
-      "value": "panda"
-    }
-  ],
-
   "events": [
     {
-      "id": "imageChanged",
-      "name": "Image Changed",
-      "locale_name": {
-        "fr_FR": "Image Changée"
-      }
+      "id": "sent",
+      "name": "On Input Sent"
     }
   ],
-
+  "properties": [
+    {
+      "id": "key",
+      "name": "Event Value Parameter Key",
+      "type": "String",
+      "value": "inputValue",
+      "hidden": true
+    },
+    {
+      "id": "textSize",
+      "name": "Text Size",
+      "locale_name": {
+        "fr_FR": "Taille du texte"
+      },
+      "type": "Integer",
+      "value": 16
+    },
+    {
+      "id": "textColor",
+      "name": "Text Color",
+      "locale_name": {
+        "fr_FR": "Couleur du texte"
+      },
+      "type": "Color",
+      "value": "#4f4f4f"
+    },
+    {
+      "id": "debounce",
+      "name": "Live Validation",
+      "locale_name": {
+        "fr_FR": "Validation en direct"
+      },
+      "type": "Boolean",
+      "value": false,
+      "separator": true
+    },
+    {
+      "id": "debounceTime",
+      "name": "Validation Delay (ms)",
+      "locale_name": {
+        "fr_FR": "Délai de validation (ms)"
+      },
+      "type": "Integer",
+      "value": 200
+    }
+  ],
   "actions": [
     {
-      "id": "changeColor",
-      "name": "Change Color",
-      "params": [
-        {
-          "id": "backgroundColor",
-          "name": "Background Color",
-          "locale_name": {
-            "fr_FR": "Couleur de fond"
-          },
-          "type": "String",
-          "value": "#FFFFFF"
-        }
-      ]
-    }
-  ],
-
-  "synchronization": [
-    {
-      "id": "synchroImages",
-      "name": "Synchronize images",
-      "locale_name": {
-        "fr_FR": "Synchroniser images"
-      }
-    }
-  ],
-
-  "resources": [
-    {
-      "id": "my_image.png",
-      "type": "Image",
-      "localization": false
+      "id": "validate",
+      "name": "Validate"
     }
   ]
 }
