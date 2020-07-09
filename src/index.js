@@ -32,6 +32,9 @@ function myInit() {
   }
   textEl.style.fontSize = `${properties.textSize}px`;
   textEl.style.color = properties.textColor;
+  if (properties.placeholder) {
+    textEl.placeholder = properties.placeholder;
+  }
 }
 
 PandaBridge.init(() => {

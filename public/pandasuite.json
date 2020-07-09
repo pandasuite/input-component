@@ -19,6 +19,14 @@
       "hidden": true
     },
     {
+      "id": "placeholder",
+      "name": "Placeholder",
+      "locale_name": {
+        "fr_FR": "Texte générique"
+      },
+      "type": "String"
+    },
+    {
       "id": "textSize",
       "name": "Text Size",
       "locale_name": {
@@ -34,7 +42,7 @@
         "fr_FR": "Couleur du texte"
       },
       "type": "Color",
-      "value": "#4f4f4f"
+      "value": "#000000"
     },
     {
       "id": "debounce",
