@@ -5,20 +5,15 @@ import set from 'lodash/set';
 
 let properties = null;
 
-function sendEvent(value) {
+function sendEvent(key, value) {
   const data = {};
 
   set(data, properties.key || 'value', value);
-  PandaBridge.send('sent', [data]);
+  PandaBridge.send(key, [data]);
 }
 
-function validate(erase = true) {
-  const text = document.getElementById('text').value;
-
-  sendEvent(text);
-  if (erase) {
-    document.getElementById('text').value = '';
-  }
+function validate() {
+  sendEvent('onValidated', document.getElementById('text').value);
 }
 
 function myInit() {
@@ -26,7 +21,7 @@ function myInit() {
 
   if (properties && properties.debounce) {
     textEl.oninput = debounce(() => {
-      validate(false);
+      validate();
     },
     properties.debounceTime || 300);
   }
@@ -50,5 +45,15 @@ PandaBridge.init(() => {
 
   PandaBridge.listen('validate', () => {
     validate();
+  });
+
+  PandaBridge.listen('setText', ([props]) => {
+    const { text } = props || {};
+
+    document.getElementById('text').value = text || '';
+  });
+
+  PandaBridge.listen('clearText', () => {
+    document.getElementById('text').value = '';
   });
 });

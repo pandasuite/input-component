@@ -6,8 +6,11 @@
   },
   "events": [
     {
-      "id": "sent",
-      "name": "On Input Sent"
+      "id": "onValidated",
+      "name": "On Validated",
+      "locale_name": {
+        "fr_FR": "Validé"
+      }
     }
   ],
   "properties": [
@@ -67,7 +70,34 @@
   "actions": [
     {
       "id": "validate",
-      "name": "Validate"
+      "name": "Validate",
+      "locale_name": {
+        "fr_FR": "Valider"
+      }
+    },
+    {
+      "id": "setText",
+      "name": "Set Text",
+      "locale_name": {
+        "fr_FR": "Définir le texte"
+      },
+      "params": [
+        {
+          "id": "text",
+          "name": "Text",
+          "locale_name": {
+            "fr_FR": "Texte"
+          },
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "id": "clearText",
+      "name": "Clear Text",
+      "locale_name": {
+        "fr_FR": "Supprimer le texte"
+      }
     }
   ]
 }
