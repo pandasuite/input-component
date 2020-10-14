@@ -26,6 +26,7 @@ function myInit() {
     properties.debounceTime || 300);
   }
   textEl.style.fontSize = `${properties.textSize}px`;
+  textEl.style.textAlign = properties.textAlign;
   textEl.style.color = properties.textColor;
   if (properties.placeholder) {
     textEl.placeholder = properties.placeholder;

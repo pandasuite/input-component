@@ -39,6 +39,38 @@
       "value": 16
     },
     {
+      "id": "textAlign",
+      "name": "Text Align",
+      "locale_name": {
+        "fr_FR": "Alignement du texte"
+      },
+      "type": "Dropdown",
+      "value": "left",
+      "items": [
+        {
+          "id": "left",
+          "name": "Left",
+          "locale_name": {
+            "fr_FR": "À gauche"
+          }    
+        },
+        {
+          "id": "right",
+          "name": "Right",
+          "locale_name": {
+            "fr_FR": "À droite"
+          }    
+        },
+        {
+          "id": "center",
+          "name": "Center",
+          "locale_name": {
+            "fr_FR": "Au centre"
+          }    
+        }
+      ]
+    },
+    {
       "id": "textColor",
       "name": "Text Color",
       "locale_name": {
