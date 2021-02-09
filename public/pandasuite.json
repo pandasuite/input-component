@@ -130,6 +130,13 @@
       "locale_name": {
         "fr_FR": "Supprimer le texte"
       }
+    },
+    {
+      "id": "focusText",
+      "name": "Focus Text",
+      "locale_name": {
+        "fr_FR": "Cibler le texte"
+      }
     }
   ]
 }

@@ -57,4 +57,8 @@ PandaBridge.init(() => {
   PandaBridge.listen('clearText', () => {
     document.getElementById('text').value = '';
   });
+
+  PandaBridge.listen('focusText', () => {
+    document.getElementById('text').focus();
+  });
 });
