@@ -120,7 +120,8 @@
           "locale_name": {
             "fr_FR": "Texte"
           },
-          "type": "String"
+          "type": "String",
+          "bindable": true
         }
       ]
     },
