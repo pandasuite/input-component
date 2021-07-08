@@ -10,17 +10,19 @@
       "name": "On Validated",
       "locale_name": {
         "fr_FR": "Validé"
+      },
+      "queryable": {
+        "inputValue": "Value",
+        "__desc_inputValue": {
+          "name": "Input value",
+          "locale_name": {
+            "fr_FR": "Valeur de saisie"
+          }
+        }
       }
     }
   ],
   "properties": [
-    {
-      "id": "key",
-      "name": "Event Value Parameter Key",
-      "type": "String",
-      "value": "inputValue",
-      "hidden": true
-    },
     {
       "id": "placeholder",
       "name": "Placeholder",

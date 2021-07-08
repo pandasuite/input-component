@@ -1,19 +1,16 @@
 import PandaBridge from 'pandasuite-bridge';
 
 import debounce from 'lodash/debounce';
-import set from 'lodash/set';
 
 let properties = null;
 
-function sendEvent(key, value) {
-  const data = {};
-
-  set(data, properties.key || 'value', value);
-  PandaBridge.send(key, [data]);
-}
-
 function validate() {
-  sendEvent('onValidated', document.getElementById('text').value);
+  const queryable = {
+    inputValue: document.getElementById('text').value,
+  };
+
+  PandaBridge.send(PandaBridge.UPDATED, { queryable });
+  PandaBridge.send('onValidated', [queryable]);
 }
 
 function myInit() {
