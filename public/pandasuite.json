@@ -141,5 +141,14 @@
         "fr_FR": "Cibler le texte"
       }
     }
-  ]
+  ],
+  "queryable": {
+    "inputValue": "Value",
+    "__desc_inputValue": {
+      "name": "Input value",
+      "locale_name": {
+        "fr_FR": "Valeur de saisie"
+      }
+    }
+  }
 }
