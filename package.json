@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.19",
-    "pandasuite-bridge": "^4.3.3"
+    "pandasuite-bridge": "^4.5.0"
   },
   "release-it": {
     "github": {

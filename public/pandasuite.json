@@ -20,9 +20,35 @@
           }
         }
       }
+    },
+    {
+      "id": "onFocused",
+      "name": "On Focused",
+      "locale_name": {
+        "fr_FR": "Ciblé"
+      },
+      "queryable": {
+        "inputValue": "Value",
+        "__desc_inputValue": {
+          "name": "Input value",
+          "locale_name": {
+            "fr_FR": "Valeur de saisie"
+          }
+        }
+      }
     }
   ],
   "properties": [
+    {
+      "id": "content",
+      "name": "Content",
+      "locale_name": {
+        "fr_FR": "Contenu"
+      },
+      "type": "Edit",
+      "bindable": true,
+      "value": ""
+    },
     {
       "id": "placeholder",
       "name": "Placeholder",

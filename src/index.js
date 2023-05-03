@@ -13,6 +13,14 @@ function validate() {
   PandaBridge.send('onValidated', [queryable]);
 }
 
+function focused() {
+  const queryable = {
+    inputValue: document.getElementById('text').value,
+  };
+
+  PandaBridge.send('onFocused', [queryable]);
+}
+
 function myInit() {
   const textEl = document.getElementById('text');
 
@@ -22,12 +30,14 @@ function myInit() {
     },
     properties.debounceTime || 300);
   }
+  textEl.onfocus = focused;
   textEl.style.fontSize = `${properties.textSize}px`;
   textEl.style.textAlign = properties.textAlign;
   textEl.style.color = properties.textColor;
   if (properties.placeholder) {
     textEl.placeholder = properties.placeholder;
   }
+  textEl.value = properties.content;
 }
 
 PandaBridge.init(() => {
