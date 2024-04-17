@@ -18,6 +18,35 @@
           "locale_name": {
             "fr_FR": "Valeur de saisie"
           }
+        },
+        "validation": {
+          "validated": false,
+          "__desc_validated": {
+            "name": "Is validated",
+            "locale_name": {
+              "fr_FR": "Est validé"
+            }
+          },
+          "isValid": false,
+          "__desc_isValid": {
+            "name": "Is valid",
+            "locale_name": {
+              "fr_FR": "Est valide"
+            }
+          },
+          "isEmpty": true,
+          "__desc_isEmpty": {
+            "name": "Is empty",
+            "locale_name": {
+              "fr_FR": "Est vide"
+            }
+          }
+        },
+        "__desc_validation": {
+          "name": "Validation",
+          "locale_name": {
+            "fr_FR": "Validation"
+          }
         }
       }
     },
@@ -33,6 +62,35 @@
           "name": "Input value",
           "locale_name": {
             "fr_FR": "Valeur de saisie"
+          }
+        },
+        "validation": {
+          "validated": false,
+          "__desc_validated": {
+            "name": "Is validated",
+            "locale_name": {
+              "fr_FR": "Est validé"
+            }
+          },
+          "isValid": false,
+          "__desc_isValid": {
+            "name": "Is valid",
+            "locale_name": {
+              "fr_FR": "Est valide"
+            }
+          },
+          "isEmpty": true,
+          "__desc_isEmpty": {
+            "name": "Is empty",
+            "locale_name": {
+              "fr_FR": "Est vide"
+            }
+          }
+        },
+        "__desc_validation": {
+          "name": "Validation",
+          "locale_name": {
+            "fr_FR": "Validation"
           }
         }
       }
@@ -50,27 +108,104 @@
       "value": ""
     },
     {
+      "id": "type",
+      "name": "Type",
+      "locale_name": {
+        "fr_FR": "Type"
+      },
+      "type": "Dropdown",
+      "value": "text",
+      "items": [
+        {
+          "id": "text",
+          "name": "Text",
+          "locale_name": {
+            "fr_FR": "Texte"
+          }
+        },
+        {
+          "id": "textarea",
+          "name": "Text Area",
+          "locale_name": {
+            "fr_FR": "Zone de texte"
+          }
+        },
+        {
+          "id": "password",
+          "name": "Password",
+          "locale_name": {
+            "fr_FR": "Mot de passe"
+          }
+        },
+        {
+          "id": "email",
+          "name": "Email",
+          "locale_name": {
+            "fr_FR": "Email"
+          }
+        },
+        {
+          "id": "number",
+          "name": "Number",
+          "locale_name": {
+            "fr_FR": "Nombre"
+          }
+        },
+        {
+          "id": "tel",
+          "name": "Phone",
+          "locale_name": {
+            "fr_FR": "Téléphone"
+          }
+        },
+        {
+          "id": "url",
+          "name": "URL",
+          "locale_name": {
+            "fr_FR": "URL"
+          }
+        },
+        {
+          "id": "date",
+          "name": "Date",
+          "locale_name": {
+            "fr_FR": "Date"
+          }
+        },
+        {
+          "id": "time",
+          "name": "Time",
+          "locale_name": {
+            "fr_FR": "Heure"
+          }
+        }
+      ],
+      "separator": true
+    },
+    {
       "id": "placeholder",
       "name": "Placeholder",
       "locale_name": {
         "fr_FR": "Texte générique"
       },
-      "type": "String"
+      "type": "String",
+      "bindable": true,
+      "hidden": "properties.type.value == 'textarea'"
     },
     {
       "id": "textSize",
-      "name": "Text Size",
+      "name": "Size",
       "locale_name": {
-        "fr_FR": "Taille du texte"
+        "fr_FR": "Taille"
       },
       "type": "Integer",
       "value": 16
     },
     {
       "id": "textAlign",
-      "name": "Text Align",
+      "name": "Align",
       "locale_name": {
-        "fr_FR": "Alignement du texte"
+        "fr_FR": "Alignement"
       },
       "type": "Dropdown",
       "value": "left",
@@ -80,29 +215,29 @@
           "name": "Left",
           "locale_name": {
             "fr_FR": "À gauche"
-          }    
+          }
         },
         {
           "id": "right",
           "name": "Right",
           "locale_name": {
             "fr_FR": "À droite"
-          }    
+          }
         },
         {
           "id": "center",
           "name": "Center",
           "locale_name": {
             "fr_FR": "Au centre"
-          }    
+          }
         }
       ]
     },
     {
       "id": "textColor",
-      "name": "Text Color",
+      "name": "Color",
       "locale_name": {
-        "fr_FR": "Couleur du texte"
+        "fr_FR": "Couleur"
       },
       "type": "Color",
       "value": "#000000"
@@ -124,6 +259,7 @@
         "fr_FR": "Délai de validation (ms)"
       },
       "type": "Integer",
+      "hidden": "properties.debounce.value != true",
       "value": 200
     }
   ],
@@ -174,6 +310,35 @@
       "name": "Input value",
       "locale_name": {
         "fr_FR": "Valeur de saisie"
+      }
+    },
+    "validation": {
+      "validated": false,
+      "__desc_validated": {
+        "name": "Is validated",
+        "locale_name": {
+          "fr_FR": "Est validé"
+        }
+      },
+      "isValid": false,
+      "__desc_isValid": {
+        "name": "Is valid",
+        "locale_name": {
+          "fr_FR": "Est valide"
+        }
+      },
+      "isEmpty": true,
+      "__desc_isEmpty": {
+        "name": "Is empty",
+        "locale_name": {
+          "fr_FR": "Est vide"
+        }
+      }
+    },
+    "__desc_validation": {
+      "name": "Validation",
+      "locale_name": {
+        "fr_FR": "Validation"
       }
     }
   }
