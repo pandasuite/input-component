@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "stype": "input",
+    "componentURL": "https://github.com/pandasuite/input-component/",
+    "description": "User input field supporting text, password, email, number, telephone, and multiline textarea modes. Exposes the entered value with validation state as queryable data.",
+    "locale_description": {
+      "fr_FR": "Champ de saisie utilisateur supportant les modes texte, mot de passe, email, nombre, téléphone et zone de texte multiligne. Expose la valeur saisie avec l'état de validation comme données interrogeables."
+    }
+  },
   "version": "2.0.0",
   "main": "",
   "system": {
@@ -17,6 +25,10 @@
           "name": "Input value",
           "locale_name": {
             "fr_FR": "Valeur de saisie"
+          },
+          "description": "Current text value of the input field.",
+          "locale_description": {
+            "fr_FR": "Valeur texte actuelle du champ de saisie."
           }
         },
         "validation": {
@@ -46,8 +58,16 @@
           "name": "Validation",
           "locale_name": {
             "fr_FR": "Validation"
+          },
+          "description": "Whether the input passed validation.",
+          "locale_description": {
+            "fr_FR": "Si la saisie a passé la validation."
           }
         }
+      },
+      "description": "Fires when the input content is validated. Exposes the current value.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand le contenu saisi est validé. Expose la valeur actuelle."
       }
     },
     {
@@ -62,6 +82,10 @@
           "name": "Input value",
           "locale_name": {
             "fr_FR": "Valeur de saisie"
+          },
+          "description": "Current text value when focus is received.",
+          "locale_description": {
+            "fr_FR": "Valeur texte actuelle quand le focus est reçu."
           }
         },
         "validation": {
@@ -91,8 +115,16 @@
           "name": "Validation",
           "locale_name": {
             "fr_FR": "Validation"
+          },
+          "description": "Validation state when focus is received.",
+          "locale_description": {
+            "fr_FR": "État de validation quand le focus est reçu."
           }
         }
+      },
+      "description": "Fires when the input field receives focus.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand le champ de saisie reçoit le focus."
       }
     }
   ],
@@ -105,7 +137,11 @@
       },
       "type": "Edit",
       "bindable": true,
-      "value": ""
+      "value": "",
+      "description": "Opens the text content editor for setting initial text.",
+      "locale_description": {
+        "fr_FR": "Ouvre l'éditeur de contenu texte pour définir le texte initial."
+      }
     },
     {
       "id": "type",
@@ -180,7 +216,11 @@
           }
         }
       ],
-      "separator": true
+      "separator": true,
+      "description": "Input field type (text, password, email, number, telephone, textarea).",
+      "locale_description": {
+        "fr_FR": "Type de champ de saisie (texte, mot de passe, email, nombre, téléphone, zone de texte)."
+      }
     },
     {
       "id": "placeholder",
@@ -190,7 +230,11 @@
       },
       "type": "String",
       "bindable": true,
-      "hidden": "properties.type.value == 'textarea'"
+      "hidden": "properties.type.value == 'textarea'",
+      "description": "Placeholder text shown when the field is empty. Hidden when type is textarea.",
+      "locale_description": {
+        "fr_FR": "Texte indicatif affiché quand le champ est vide. Masqué quand le type est zone de texte."
+      }
     },
     {
       "id": "textSize",
@@ -199,7 +243,11 @@
         "fr_FR": "Taille"
       },
       "type": "Integer",
-      "value": 16
+      "value": 16,
+      "description": "Font size in pixels for the input text.",
+      "locale_description": {
+        "fr_FR": "Taille de police en pixels pour le texte saisi."
+      }
     },
     {
       "id": "textAlign",
@@ -231,7 +279,11 @@
             "fr_FR": "Au centre"
           }
         }
-      ]
+      ],
+      "description": "Text alignment within the input field (left, center, right).",
+      "locale_description": {
+        "fr_FR": "Alignement du texte dans le champ de saisie (gauche, centre, droite)."
+      }
     },
     {
       "id": "textColor",
@@ -240,7 +292,11 @@
         "fr_FR": "Couleur"
       },
       "type": "Color",
-      "value": "#000000"
+      "value": "#000000",
+      "description": "Color of the input text.",
+      "locale_description": {
+        "fr_FR": "Couleur du texte saisi."
+      }
     },
     {
       "id": "debounce",
@@ -250,7 +306,11 @@
       },
       "type": "Boolean",
       "value": false,
-      "separator": true
+      "separator": true,
+      "description": "Enable debounce to delay validation until the user stops typing.",
+      "locale_description": {
+        "fr_FR": "Activer le délai pour retarder la validation jusqu'à ce que l'utilisateur arrête de taper."
+      }
     },
     {
       "id": "debounceTime",
@@ -260,7 +320,11 @@
       },
       "type": "Integer",
       "hidden": "properties.debounce.value != true",
-      "value": 200
+      "value": 200,
+      "description": "Debounce delay in milliseconds. Active when debounce is enabled.",
+      "locale_description": {
+        "fr_FR": "Délai de debounce en millisecondes. Actif quand le debounce est activé."
+      }
     }
   ],
   "actions": [
@@ -269,6 +333,10 @@
       "name": "Validate",
       "locale_name": {
         "fr_FR": "Valider"
+      },
+      "description": "Manually trigger validation of the input content.",
+      "locale_description": {
+        "fr_FR": "Déclencher manuellement la validation du contenu saisi."
       }
     },
     {
@@ -285,15 +353,27 @@
             "fr_FR": "Texte"
           },
           "type": "String",
-          "bindable": true
+          "bindable": true,
+          "description": "Text value to set in the input field.",
+          "locale_description": {
+            "fr_FR": "Valeur de texte à définir dans le champ de saisie."
+          }
         }
-      ]
+      ],
+      "description": "Set the input field text programmatically.",
+      "locale_description": {
+        "fr_FR": "Définir le texte du champ de saisie par programmation."
+      }
     },
     {
       "id": "clearText",
       "name": "Clear Text",
       "locale_name": {
         "fr_FR": "Supprimer le texte"
+      },
+      "description": "Clear the input field content.",
+      "locale_description": {
+        "fr_FR": "Effacer le contenu du champ de saisie."
       }
     },
     {
@@ -301,6 +381,10 @@
       "name": "Focus Text",
       "locale_name": {
         "fr_FR": "Cibler le texte"
+      },
+      "description": "Give focus to the input field.",
+      "locale_description": {
+        "fr_FR": "Donner le focus au champ de saisie."
       }
     }
   ],
@@ -310,6 +394,10 @@
       "name": "Input value",
       "locale_name": {
         "fr_FR": "Valeur de saisie"
+      },
+      "description": "Current text value of the input field, available for data binding.",
+      "locale_description": {
+        "fr_FR": "Valeur texte actuelle du champ de saisie, disponible pour le binding de données."
       }
     },
     "validation": {
@@ -339,6 +427,10 @@
       "name": "Validation",
       "locale_name": {
         "fr_FR": "Validation"
+      },
+      "description": "Current validation state, available for data binding.",
+      "locale_description": {
+        "fr_FR": "État de validation actuel, disponible pour le binding de données."
       }
     }
   }
