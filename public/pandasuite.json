@@ -10,7 +10,8 @@
   "version": "2.0.0",
   "main": "",
   "system": {
-    "markers": false
+    "markers": false,
+    "localization": true
   },
   "events": [
     {
@@ -234,7 +235,8 @@
       "description": "Placeholder text shown when the field is empty. Hidden when type is textarea.",
       "locale_description": {
         "fr_FR": "Texte indicatif affiché quand le champ est vide. Masqué quand le type est zone de texte."
-      }
+      },
+      "i18n": true
     },
     {
       "id": "textSize",
